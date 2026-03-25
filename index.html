@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Everest Clone | Volunteer & Impact</title>
+    <style>
+        /* CSS Variables for easy color changes */
+        :root {
+            --primary: #e63946;    /* Red */
+            --secondary: #1d3557;  /* Dark Blue */
+            --light: #f1faee;      /* Light Green/White */
+            --accent: #457b9d;     /* Steel Blue */
+            --text: #333;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            line-height: 1.6;
+            color: var(--text);
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 8%;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo { font-size: 1.5rem; font-weight: 800; color: var(--primary); text-transform: uppercase; }
+
+        .nav-links a {
+            margin-left: 25px;
+            text-decoration: none;
+            color: var(--secondary);
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--primary); }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .hero h1 { font-size: 3.5rem; margin-bottom: 15px; }
+        .hero p { font-size: 1.2rem; max-width: 700px; margin-bottom: 30px; }
+
+        /* Buttons */
+        .btn {
+            background: var(--primary);
+            color: white;
+            padding: 14px 35px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            display: inline-block;
+            transition: 0.3s;
+            border: none;
+        }
+
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(230, 57, 70, 0.4); }
+
+        /* Impact Stats */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 60px 10%;
+            background: var(--secondary);
+            color: white;
+            text-align: center;
+        }
+
+        .stat-card h3 { font-size: 2.8rem; margin: 0; color: var(--light); }
+
+        /* Options Grid / Cards */
+        .options-section { padding: 80px 10%; text-align: center; }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #eee;
+            padding: 35px;
+            border-radius: 15px;
+            transition: 0.4s;
+            text-align: left;
+        }
+
+        .card:hover { border-color: var(--primary); transform: translateY(-10px); }
+        .card h3 { color: var(--secondary); margin-top: 0; }
+
+        /* Donation Goal Bar */
+        .goal-container {
+            background: var(--light);
+            padding: 40px 10%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .goal-box {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            width: 100%;
+            max-width: 500px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        .progress-bg { background: #ddd; height: 12px; border-radius: 10px; margin: 15px 0; overflow: hidden; }
+        .progress-fill { background: var(--primary); width: 75%; height: 100%; transition: 1s; }
+
+        /* Testimonial */
+        .quote-section { padding: 80px 15%; text-align: center; background: #fff; }
+        .quote-text { font-size: 1.4rem; font-style: italic; color: #555; }
+
+        /* WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            z-index: 1000;
+        }
+
+        footer { background: var(--secondary); color: white; text-align: center; padding: 40px; }
+
+        /* Responsive Mobile View */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            nav { flex-direction: column; }
+            .nav-links { margin-top: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Team Everest</div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#programs">Programs</a>
+            <a href="#scholarship">Scholarship</a>
+            <a href="#" class="btn" style="padding: 10px 20px;">Donate Now</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>Think Volunteering, Think Everest</h1>
+        <p>We promote volunteering by creating easy opportunities for everyone. Join our community of 1 Lakh+ volunteers and change a child's life today.</p>
+        <div>
+            <a href="#programs" class="btn">View Opportunities</a>
+            <a href="#" class="btn" style="background: white; color: var(--secondary); margin-left: 10px;">Our Impact</a>
+        </div>
+    </header>
+
+    <section class="stats">
+        <div class="stat-card"><h3>100K+</h3><p>Volunteers</p></div>
+        <div class="stat-card"><h3>1M+</h3><p>Lives Impacted</p></div>
+        <div class="stat-card"><h3>30+</h3><p>Countries</p></div>
+        <div class="stat-card"><h3>500+</h3><p>Scholarships</p></div>
+    </section>
+
+    <section id="programs" class="options-section">
+        <h2>How You Can Help</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>🎓 Scholarship Fund</h3>
+                <p>Support the education of students from rural backgrounds. Your contribution helps pay tuition fees for engineering and arts degrees.</p>
+                <a href="#" style="color: var(--primary); font-weight: bold; text-decoration: none;">Apply as Scholar →</a>
+            </div>
+            <div class="card">
+                <h3>📱 Virtual Mentoring</h3>
+                <p>Spend just 30 minutes a week talking to a college girl to help her improve her communication and job readiness skills.</p>
+                <a href="#" style="color: var(--primary); font-weight: bold; text-decoration: none;">Register Now →</a>
+            </div>
+            <div class="card">
+                <h3>🏢 Corporate CSR</h3>
+                <p>We partner with top companies like Accenture and Amazon to create meaningful social engagement for employees.</p>
+                <a href="#" style="color: var(--primary); font-weight: bold; text-decoration: none;">Partner With Us →</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="goal-container">
+        <div class="goal-box">
+            <h3 style="margin-top: 0;">2026 Education Goal</h3>
+            <p>Help us fund 200 new engineering scholarships this year.</p>
+            <div class="progress-bg"><div class="progress-fill"></div></div>
+            <p><strong>$15,000</strong> raised of $20,000 target</p>
+            <button class="btn" style="width: 100%;">Donate Monthly</button>
+        </div>
+    </section>
+
+    <section class="quote-section">
+        <p class="quote-text">"I am happy that I am sponsoring a student now and I volunteer by giving my time to teach students. Team Everest changed my career path."</p>
+        <p><strong>— Gunadevan, Accenture Employee</strong></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Team Everest NGO. All Rights Reserved.</p>
+        <p style="font-size: 0.8rem; opacity: 0.7;">Registered Non-Profit in India & USA</p>
+    </footer>
+
+    <a href="https://wa.me/YOUR_NUMBER" class="whatsapp-float">
+        W
+    </a>
+
+</body>
+</html>
